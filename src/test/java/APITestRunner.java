@@ -3,6 +3,6 @@ import com.intuit.karate.junit4.Karate;
 import org.junit.runner.RunWith;
 
 @RunWith(Karate.class)
-@KarateOptions(features = "classpath:booking/get-booking-id.feature")
+@KarateOptions()
 public class APITestRunner {
 }

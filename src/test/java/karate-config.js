@@ -11,8 +11,6 @@ function() {
   }
   if (env == 'dev') {
     config.bookingURL = 'http://restful-booker.herokuapp.com'
-  } else if (env == 'e2e') {
-    // customize
   }
   return config;
 }

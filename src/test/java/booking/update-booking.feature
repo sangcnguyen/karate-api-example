@@ -24,7 +24,6 @@ Feature: Update a booking
     }
     """
     When method put
-    * print response
     Then match response ==
     """
     {

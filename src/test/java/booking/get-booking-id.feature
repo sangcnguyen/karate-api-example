@@ -3,7 +3,7 @@ Feature: Returns a specific booking based upon the booking id provided
   Background:
     * url bookingURL
 
-  Scenario: Get all booking list
+  Scenario: Get booking by id
     Given path 'booking', '1'
     And header Accept = 'application/json'
     And method get
@@ -18,6 +18,7 @@ Feature: Returns a specific booking based upon the booking id provided
       "bookingdates": {
           "checkin": "#string",
           "checkout": "#string"
-      }
+      },
+      "additionalneeds": "#string"
     }
     """
