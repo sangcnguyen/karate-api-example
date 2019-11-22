@@ -19,6 +19,6 @@ Feature: Returns a specific booking based upon the booking id provided
           "checkin": "#string",
           "checkout": "#string"
       },
-      "additionalneeds": "#string"
+      "additionalneeds": "##string"
     }
     """

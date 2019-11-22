@@ -2,6 +2,14 @@ Feature: Create a new booking
 
   Background:
     * url bookingURL
+    # import RandomUtil class
+    * def RandomUtil = Java.type('com.github.sn.RandomUtil')
+    * def firstName = RandomUtil.firstName()
+    * def lastName = RandomUtil.lastName()
+    * def bool = RandomUtil.bool()
+    * def string = RandomUtil.string()
+    * def number = RandomUtil.number()
+    * def date = RandomUtil.date()
 
   Scenario:  Create new booking
     Given path 'booking'
@@ -10,15 +18,15 @@ Feature: Create a new booking
     And request
     """
     {
-        "firstname" : "Jim",
-        "lastname" : "Brown",
-        "totalprice" : 111,
-        "depositpaid" : true,
+        "firstname" : "#(firstName)",
+        "lastname" : "#(lastName)",
+        "totalprice" : #(number),
+        "depositpaid" : #(bool),
         "bookingdates" : {
-            "checkin" : "2018-01-01",
-            "checkout" : "2019-01-01"
+            "checkin" : "#(date)",
+            "checkout" : "#(date)"
         },
-        "additionalneeds" : "Breakfast"
+        "additionalneeds" : "#(string)"
     }
     """
     When method post

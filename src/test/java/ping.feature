@@ -1,3 +1,4 @@
+@ignore
 Feature: A simple health check endpoint to confirm whether the API is up and running
 
   Background:

@@ -2,25 +2,34 @@ Feature: Update a booking
 
   Background:
     * url bookingURL
-    * def auth = call read('classpath:booking/auth.feature')
+    * def auth = call read('classpath:auth.feature')
     * def createBooking = call read('classpath:booking/create-booking.feature')
+    # import RandomUtil class
+    * def RandomUtil = Java.type('com.github.sn.RandomUtil')
+    * def firstName = RandomUtil.firstName()
+    * def lastName = RandomUtil.lastName()
+    * def bool = RandomUtil.bool()
+    * def string = RandomUtil.string()
+    * def number = RandomUtil.number()
+    * def date = RandomUtil.date()
 
   Scenario:  Update booking
-    Given path 'booking' +'/' + createBooking.bookingId
+    Given path 'booking' , createBooking.bookingId
     And header Accept = 'application/json'
     And header Content-Type = 'application/json'
     And cookie token = auth.basicToken
     And request
     """
     {
-        "firstname" : "Sang",
-        "lastname" : "Nguyen",
-        "totalprice" : 2000,
-        "depositpaid" : false,
+        "firstname" : "#(firstName)",
+        "lastname" : "#(lastName)",
+        "totalprice" : #(number),
+        "depositpaid" : #(bool),
         "bookingdates" : {
-            "checkin" : "2019-01-01",
-            "checkout" : "2020-01-01"
-        }
+            "checkin" : "#(date)",
+            "checkout" : "#(date)"
+        },
+        "additionalneeds" : "#(string)"
     }
     """
     When method put
@@ -35,7 +44,7 @@ Feature: Update a booking
           "checkin": "#string",
           "checkout": "#string"
       },
-      "additionalneeds": "#ignore"
+      "additionalneeds": "#string"
     }
     """
     And status 200

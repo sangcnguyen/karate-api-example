@@ -1,3 +1,4 @@
+@ignore
 Feature: Creates a new auth token to use for access to the PUT and DELETE /booking
 
   Background:
