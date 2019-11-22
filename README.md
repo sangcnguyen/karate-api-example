@@ -5,6 +5,8 @@ This is an example of how to use [Karate](http://restful-booker.herokuapp.com/ap
 ### Run a single feature file
 To run a script *.feature file from your Java IDE, right-click APITestRunner.
 
-### Run feature file from Maven
+### Run feature file from Maven/ CI tool
 
 ``mvn test -Dtest=APITestRunner``
+
+Happy Testing :blush: :blush:
