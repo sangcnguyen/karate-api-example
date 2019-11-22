@@ -1,4 +1,4 @@
-Feature: Create a new booking
+Feature: Create new booking
 
   Background:
     * url bookingURL

@@ -1,4 +1,4 @@
-Feature:
+Feature: Get all booking list
 
   Background:
     * url bookingURL
