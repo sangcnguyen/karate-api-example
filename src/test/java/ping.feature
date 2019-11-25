@@ -1,8 +1,9 @@
-@ignore
+@ignore @smoke-test
 Feature: A simple health check endpoint to confirm whether the API is up and running
 
   Background:
     * url bookingURL
+
 
   Scenario: Ping to api
     Given path 'ping'

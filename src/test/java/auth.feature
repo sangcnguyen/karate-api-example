@@ -1,8 +1,9 @@
-@ignore
+@ignore @smoke-test
 Feature: Creates a new auth token to use for access to the PUT and DELETE /booking
 
   Background:
     * url bookingURL
+
 
   Scenario: Create token
     Given path 'auth'

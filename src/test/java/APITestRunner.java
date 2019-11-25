@@ -3,6 +3,7 @@ import com.intuit.karate.junit4.Karate;
 import org.junit.runner.RunWith;
 
 @RunWith(Karate.class)
-@KarateOptions(tags = "~@ignore")
+@KarateOptions(tags = "@full-test")
 public class APITestRunner {
+
 }

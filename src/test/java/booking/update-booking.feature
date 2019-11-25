@@ -1,3 +1,4 @@
+@full-test
 Feature: Update a booking
 
   Background:
@@ -13,6 +14,7 @@ Feature: Update a booking
     * def number = RandomUtil.number()
     * def date = RandomUtil.date()
 
+  @update-booking
   Scenario:  Update booking
     Given path 'booking' , createBooking.bookingId
     And header Accept = 'application/json'

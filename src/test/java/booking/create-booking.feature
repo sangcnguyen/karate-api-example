@@ -1,3 +1,4 @@
+@full-test
 Feature: Create new booking
 
   Background:
@@ -11,6 +12,7 @@ Feature: Create new booking
     * def number = RandomUtil.number()
     * def date = RandomUtil.date()
 
+  @create-booking
   Scenario:  Create new booking
     Given path 'booking'
     And header Accept = 'application/json'

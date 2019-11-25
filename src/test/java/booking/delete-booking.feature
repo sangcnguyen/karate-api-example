@@ -1,3 +1,4 @@
+@full-test
 Feature: Delete booking
 
   Background:
@@ -5,6 +6,7 @@ Feature: Delete booking
     * def auth = call read('classpath:auth.feature')
     * def createBooking = call read('classpath:booking/create-booking.feature')
 
+  @delete-booking
   Scenario:  Delete booking
     Given path 'booking' , createBooking.bookingId
     And header Accept = 'application/json'
