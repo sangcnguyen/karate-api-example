@@ -7,6 +7,6 @@ To run a script *.feature file from your Java IDE, right-click APITestRunner.
 
 ### Run feature file from Maven/ CI tool
 
-``mvn test -Dtest=APITestRunner``
+``mvn test -Dkarate.options="--tags @full-test,@smoke-test" -Dtest=APITestRunner``
 
 Happy Testing :blush: :blush:
