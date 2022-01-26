@@ -1,6 +1,6 @@
-function fn() {
-  karate.configure('connectTimeout', 25000)
-  karate.configure('readTimeout', 25000)
+function karateConfig() {
+  karate.configure('connectTimeout', 50000)
+  karate.configure('readTimeout', 50000)
   karate.configure("logPrettyRequest", true)
   karate.configure("logPrettyResponse", true)
 
